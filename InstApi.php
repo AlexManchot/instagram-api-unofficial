@@ -1,6 +1,5 @@
 <?php
 
-require_once 'Const.php';
 require_once 'InstApiException.php';
 
 
