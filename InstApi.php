@@ -109,7 +109,7 @@ class InstApi {
    * Generate signature.
    * @param string $filename
    *
-   * @return string
+   * @return array
    */
     protected function GetPostData($filename){
         if(!$filename) {
