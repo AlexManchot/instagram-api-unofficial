@@ -268,7 +268,6 @@ class InstApi {
         }
 
         $media_id = $obj['media_id'];
-        $device_id = "android-" . $guid;
      
         $data = (object)array(
             'device_id' => $this->device_id,
