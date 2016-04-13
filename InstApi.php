@@ -175,12 +175,12 @@ class InstApi {
         return $obj['users'];
     }
 /**
-   * Folow.
+   * Follow.
    * @param int $user_id
    *
    * @return boolean 
    */
-    public function folowInstagram($user_id)
+    public function followInstagram($user_id)
     {
         $data = (object)array(
             'device_id' => $this->device_id,
