@@ -44,7 +44,7 @@ class InstApi {
         $sig = $this->GenerateSignature($data);
         $data = 'signed_body=' . $sig . '.' . urlencode($data) . '&ig_sig_key_version=4';
 
-        $login = SendRequest('accounts/login/', true, $data, false);
+        $login = $this->SendRequest('accounts/login/', true, $data, false);
      
         if (strpos($login[1], "Sorry, an error occurred while processing this request.")) {
             throw new InstApiException("Request failed, there's a chance that this proxy/ip is blocked\n"); 
@@ -152,7 +152,7 @@ class InstApi {
     }
 /**
    * Search user.
-   * @param string $url
+   * @param string $username
    *
    * @return JSON[].<object user fields> 
    */
@@ -224,10 +224,10 @@ class InstApi {
         );
         $data = json_encode($data);
         
-        $sig = GenerateSignature($data);
+        $sig = $this->GenerateSignature($data);
         $data = 'signed_body=' . $sig . '.' . urlencode($data) . '&ig_sig_key_version=4';
 
-        $post = SendRequest("media/{$media_id}/comment/", true, $data, $agent, true);
+        $post = $this->SendRequest("media/{$media_id}/comment/", true, $data, $agent, true);
         
         $obj = @json_decode($post[1], true);
         
