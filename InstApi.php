@@ -68,6 +68,7 @@ class InstApi {
    * Generate user agent.
    *
    * @return string
+   * Application user agent
    */
     protected function GenerateUserAgent(){
         $resolutions = array('720x1280', '320x480', '480x800', '1024x768', '1280x720', '768x1024', '480x320');
@@ -123,7 +124,14 @@ class InstApi {
 /**
    * Send request.
    * @param string $url
-   *
+   * Instagram Api Url
+   * @param boolean $post
+   * Post / Get selector
+   * @param array $post_data
+   * Post data
+   * @param boolean $cookies
+   * Save / Use cookies
+   * 
    * @return array
    */
     protected function SendRequest($url, $post, $post_data, $cookies){
