@@ -39,7 +39,7 @@ class InstApi {
             'password' => $this->password,
             'Content-Type' => 'application/x-www-form-urlencoded; charset=UTF-8',
         );
-        $data = json_encode($data);
+        $data = @json_encode($data);
 
         $sig = $this->GenerateSignature($data);
         $data = 'signed_body=' . $sig . '.' . urlencode($data) . '&ig_sig_key_version=4';
@@ -196,7 +196,7 @@ class InstApi {
             'user_id' => $user_id,
             'Content-Type' => 'application/x-www-form-urlencoded; charset=UTF-8',
         );
-        $data = json_encode($data);
+        $data = @json_encode($data);
 
         $sig = $this->GenerateSignature($data);
         $data = 'signed_body=' . $sig . '.' . urlencode($data) . '&ig_sig_key_version=4';
@@ -230,7 +230,7 @@ class InstApi {
             'comment_text' => $comment,
             'Content-Type' => 'application/x-www-form-urlencoded; charset=UTF-8',
         );
-        $data = json_encode($data);
+        $data = @json_encode($data);
         
         $sig = $this->GenerateSignature($data);
         $data = 'signed_body=' . $sig . '.' . urlencode($data) . '&ig_sig_key_version=4';
@@ -288,7 +288,7 @@ class InstApi {
             'extra' => '{}',
             'Content-Type' => 'application/x-www-form-urlencoded; charset=UTF-8',
         );
-        $data = json_encode($data);
+        $data = @json_encode($data);
 
         $sig = $this->GenerateSignature($data);
         $data = 'signed_body=' . $sig . '.' . urlencode($data) . '&ig_sig_key_version=4';
